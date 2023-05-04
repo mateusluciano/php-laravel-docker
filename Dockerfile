@@ -18,3 +18,7 @@ ENV LOG_CHANNEL stderr
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 CMD ["/start.sh"]
+
+FROM php:7.2-apache
+RUN docker-php-ext-install mysqli
+RUN a2enmod rewrite
